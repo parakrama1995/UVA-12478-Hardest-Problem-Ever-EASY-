@@ -1,14 +1,12 @@
+#include <iostream>
 #include <algorithm>
-#include <cstdio>
-#include <cstring>
+#include <string>
 using namespace std;
-
 const char* names[] = {
 	"RAKIBUL", "ANINDYA", "MOSHIUR", "SHIPLU", "KABIR", "SUNNY", "OBAIDA", "WASI"
 };
 
 const int nr_rows = 9, nr_columns = 9;
-
 const char grid[nr_rows][nr_columns] = {
 	{ 'O', 'B', 'I', 'D', 'A', 'I', 'B', 'K', 'R' },
 	{ 'R', 'K', 'A', 'U', 'L', 'H', 'I', 'S', 'P' },
@@ -20,7 +18,6 @@ const char grid[nr_rows][nr_columns] = {
 	{ 'L', 'E', 'B', 'S', 'Y', 'N', 'U', 'N', 'E' },
 	{ 'E', 'M', 'O', 'T', 'I', 'O', 'N', 'A', 'L' }
 };
-
 #ifdef DEBUG
 bool search_name(const char* name, int length)
 {
@@ -49,7 +46,6 @@ bool search_name(const char* name, int length)
 	return false;
 }
 #endif
-
 int main()
 {
 #ifdef DEBUG
@@ -66,12 +62,7 @@ int main()
 					break;
 			}
 		} while (next_permutation(name, name + length));
-		/*
-		if (nr_found == 2) {
-		puts(names[i]);
-		break;
-		}
-		*/
+		
 	}
 #else
 	puts(names[4]);
